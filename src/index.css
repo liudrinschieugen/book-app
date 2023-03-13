@@ -253,7 +253,8 @@ header a {
   border-bottom: none;
 }
 
-.favorites__content--info button {
+.favorites__content--info button,
+.modal__content--info button {
   margin: 10px auto;
 }
 

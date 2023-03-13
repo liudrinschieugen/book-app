@@ -1,7 +1,13 @@
 import Button from '../UI/Button';
 import RatingStar from './RatingStar';
 
-const BookModal = ({ closeModal, book }) => {
+const BookModal = ({
+  closeModal,
+  book,
+  addFavorite,
+  removeFavorite,
+  checkFavorite,
+}) => {
   return (
     <div className='modal__wrapper' onClick={closeModal}>
       <div
@@ -24,6 +30,21 @@ const BookModal = ({ closeModal, book }) => {
                 <RatingStar rate={item.rating} />
                 <p>{item.rating}</p>
               </div>
+              {!checkFavorite(item.id) ? (
+                <Button
+                  className='book__button'
+                  onClick={() => addFavorite(item)}
+                >
+                  Add favorite
+                </Button>
+              ) : (
+                <Button
+                  className='book__button--favorite'
+                  onClick={() => removeFavorite(item.id)}
+                >
+                  Remove favorite
+                </Button>
+              )}
             </div>
           </div>
         ))}

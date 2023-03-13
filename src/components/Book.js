@@ -48,7 +48,15 @@ const Book = React.forwardRef(
             </Button>
           )}
         </div>
-        {isModalOpen && <BookModal closeModal={closeModal} book={[book]} />}
+        {isModalOpen && (
+          <BookModal
+            closeModal={closeModal}
+            book={[book]}
+            addFavorite={addFavorite}
+            removeFavorite={removeFavorite}
+            checkFavorite={checkFavorite}
+          />
+        )}
       </>
     );
 
